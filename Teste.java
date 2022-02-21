@@ -48,35 +48,55 @@ public class Teste {
 
 //=========Consultar Ficha=========================================================================================
                     case 2:
-                        int menu2;
-                        System.out.println("Consultar Ficha por:");
-                        System.out.println("Codigo da Ficha");
-                        System.out.println("Cliente");
-                        menu2 = Integer.parseInt(teclado.entDados("Escolha uma opcao:"));
-                        switch (menu2) {
-                            //======Consultar Ficha por codigo======================================================
-                            case 1:
-                                f1.setCod(Integer.parseInt(teclado.entDados("Informe o Codigo:\t")));
 
-                            //======Consultar Ficha por Cliente======================================================
-                            case 2:
-                                String consutarNome = teclado.entDados("Digite o Nome do Cliente:");
                         cadastrarFicha(f1);
                         break;
                 }
 
+
+            case 2:
+                int menu2;
+                System.out.println("Consultar Ficha por:");
+                System.out.println("Codigo da Ficha");
+                System.out.println("Cliente");
+                menu2 = Integer.parseInt(teclado.entDados("Escolha uma opcao:"));
+                switch (menu2) {
+                    //======Consultar Ficha por codigo======================================================
+                    case 1:
+                        f1.setCod(Integer.parseInt(teclado.entDados("Informe o Codigo:\t")));
+
+                        //======Consultar Ficha por Cliente======================================================
+                    case 2:
+                        String consutarNome = teclado.entDados("Digite o Nome do Cliente:");
                 }
         }
     }
 
-
-
-
+//=========Cadastrar Ficha=========================================================================================
    public static void cadastrarFicha (Ficha f1){
         System.out.println("Cadastrar Ficha");
     }
+//=========Consultar Ficha=========================================================================================
+    public static void consultarFicha (Ficha f1){
+        System.out.println("Consultar Ficha");
+    }
+//=========Editar Ficha=========================================================================================
+    public static void editarFicha (Ficha f1){
+        System.out.println("Editar Ficha");
+    }
+
+
+
+//=========Cadastrar Cliente=========================================================================================
     public static void cadastrarCliente (Cliente c1){
         System.out.println("Cadastrar Cliente");
     }
-
+//=========Consultar Cliente=========================================================================================
+    public static void consultarCliente (Cliente c1){
+        System.out.println("Consultar Cliente");
+    }
+//=========Editar Cliente=========================================================================================
+    public static void editarCliente (Cliente c1){
+        System.out.println("Editar Cliente");
+    }
 }
