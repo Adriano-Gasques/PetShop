@@ -38,15 +38,26 @@ public class Teste {
                 System.out.println("2 - Cliente Cadastrado");
                 menu1 = Integer.parseInt(teclado.entDados("Escolha uma opcao:"));
                 switch (menu1){
-
                     case 1:
-                        System.out.println("cadastrar Cliente");
-                        //cadastrarCliente(f1);
+                        System.out.println("Novo Cliente");
+                        //novoCliente(bdc1);
                         break;
 
                     case 2:
-                        System.out.println("cadastrar ficha");
-                        //cadastrarFicha(f1);
+                        int menu21;
+                        //clienteCadastrado(Cleinte)
+                        System.out.println("1 - Animal Cadastrado");
+                        System.out.println("2 - Novo Animal");
+                        menu21 = Integer.parseInt(teclado.entDados("Escolha uma opcao:"));
+                        switch (menu21){
+                            case 1:
+                                //listarAnimal();
+                                break;
+
+                            case 2:
+                                //novoAnimal();
+                                break;
+                        }
                         break;
                 }
 //=========Consultar Ficha==========================================================================================
