@@ -56,6 +56,7 @@ public class Teste {
 
                             case 2:
                                 //novoAnimal();
+                                //add essa linha para teste
                                 break;
                         }
                         break;
