@@ -7,16 +7,18 @@ public class Teste {
 
     private static Ficha f1;
 
+    private static Cliente c1;
+
     private static List<Ficha> bdf1 = new ArrayList<Ficha>();
 
     private static List<Cliente> bdc1 = new ArrayList<Cliente>();
-    
+
     private static int menu;
 
 
 //====================================================================================
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         int menuPrincipal;
 
@@ -27,55 +29,54 @@ public class Teste {
         System.out.println("4) Sair");
         menuPrincipal = Integer.parseInt(teclado.entDados("Escolha uma opcao:"));
 
-        switch (menuPrincipal){
-            int  menu1;
+        switch (menuPrincipal) {
+
 
 //=========Cadastrar Ficha==========================================================================================
 
             case 1:
+                int menu1;
                 f1 = new Ficha();
                 System.out.println("1 - Novo Cliente");
                 System.out.println("2 - Cliente Cadastrado");
                 menu1 = Integer.parseInt(teclado.entDados("Escolha uma opcao:"));
-                switch (menu1){
+                switch (menu1) {
 
                     case 1:
-                        System.out.println("cadastrar Cliente");
-                        //cadastrarCliente(f1);
+                        cadastrarCliente(c1);
                         break;
 
+//=========Consultar Ficha=========================================================================================
                     case 2:
-                        System.out.println("cadastrar ficha");
-                        //cadastrarFicha(f1);
+                        int menu2;
+                        System.out.println("Consultar Ficha por:");
+                        System.out.println("Codigo da Ficha");
+                        System.out.println("Cliente");
+                        menu2 = Integer.parseInt(teclado.entDados("Escolha uma opcao:"));
+                        switch (menu2) {
+                            //======Consultar Ficha por codigo======================================================
+                            case 1:
+                                f1.setCod(Integer.parseInt(teclado.entDados("Informe o Codigo:\t")));
+
+                            //======Consultar Ficha por Cliente======================================================
+                            case 2:
+                                String consutarNome = teclado.entDados("Digite o Nome do Cliente:");
+                        cadastrarFicha(f1);
                         break;
                 }
-//=========Consultar Ficha==========================================================================================
-            case 2:
-                int menu2;
-                System.out.println("Consultar Ficha por:");
-                System.out.println("Codigo da Ficha");
-                System.out.println("Cliente");
-                menu2 =Integer.parseInt(teclado.entDados("Escolha uma opcao:"));
-                switch (menu2){
-                    case 1:
-                        f1.setCod(Integer.parseInt(teclado.entDados("Informe o Codigo:\t")));
-
-                    case 2:
-                        String consutarNome = teclado.entDados("Digite o Nome do Cliente:");
-
-
 
                 }
         }
     }
 
+
+
+
+   public static void cadastrarFicha (Ficha f1){
+        System.out.println("Cadastrar Ficha");
+    }
+    public static void cadastrarCliente (Cliente c1){
+        System.out.println("Cadastrar Cliente");
+    }
+
 }
-
-
- /*   public static Ficha cadastrarFicha (Ficha f1){
-        System.out.println("cadastrar ficha");
-    }
-    public static Ficha cadastrarCliente (Ficha f1){
-        System.out.println("cadastrar Cliente");
-    }
-*/
