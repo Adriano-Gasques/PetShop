@@ -79,9 +79,27 @@ public class Teste {
 
         System.out.println("cadastrar ficha");
 
+        f1.setCod(this.cod);
+
+//============Dados Cliente===================================================================================
+        f1.getCliente().setNome(c1.getNome());
+        f1.getCliente().setSobrenome(c1.getSobrenome());
+        f1.getCliente().setCpf(c1.getCpf());
+        f1.getCliente().setIdade(c1.getIdade());
+        f1.getCliente().setSexo(c1.getSexo());
+//============Endereço========================================================================================
+        c1.getEndereco().setRua(c1.getEndereco().getRua());
+        c1.getEndereco().setNumero(c1.getEndereco().getNumero());
+        c1.getEndereco().setCidade(c1.getEndereco().getCidade());
+        c1.getEndereco().setEstado(c1.getEndereco().getEstado());
 
 
-
+//============Animal========================================================================================
+        f1.getAnimal().setNome(teclado.entDados("Informe o Nome......: "));
+        f1.getAnimal().setTipo(teclado.entDados("Informe o Tipo......: "));
+        f1.getAnimal().setRaca(teclado.entDados("Informe o Raca......: "));
+        f1.getAnimal().setIdade(Integer.parseInt(teclado.entDados("Informe o Idade..: ")));
+        f1.getAnimal().setSexo(teclado.entDados("Informe o Sexo......: "));
     }
 
     public static Cliente cadastrarCliente (Cliente c1) {
@@ -98,12 +116,7 @@ public class Teste {
         c1.getEndereco().setNumero(Integer.parseInt(teclado.entDados("Informe o Numero......: ")));
         c1.getEndereco().setCidade(teclado.entDados("Informe a Cidade......: "));
         c1.getEndereco().setEstado(teclado.entDados("Informe o Estado......: "));
-//============Animal========================================================================================
-        c1.getAnimal().setNome(teclado.entDados("Informe o Nome......: "));
-        c1.getAnimal().setTipo(teclado.entDados("Informe o Tipo......: "));
-        c1.getAnimal().setRaca(teclado.entDados("Informe o Raca......: "));
-        c1.getAnimal().setIdade(Integer.parseInt(teclado.entDados("Informe o Idade..: ")));
-        c1.getAnimal().setSexo(teclado.entDados("Informe o Sexo......: "));
+
         bdc1.add(c1);
         return(c1);
 
