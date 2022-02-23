@@ -5,16 +5,12 @@ public class Cliente {
     private int cpf;
     private String sexo;
 
-//======= inicializando animal e endereço;========
+//======= inicializando endereço;========
     private Endereco endereco = new Endereco();
-    private Animal animal = new Animal();
 
     public Endereco getEndereco(){return endereco;}
-    public Animal getAnimal(){return animal;}
-
 
     public void setEndereco(Endereco endereco){this.endereco = endereco;}
-    public void setAnimal(Animal animal){this.animal = animal;}
 
 //======getters and setters========================
     public int getIdade() {

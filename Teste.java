@@ -13,6 +13,8 @@ public class Teste {
 
     private static List<Cliente> bdc1 = new ArrayList<Cliente>();
 
+    private int cod = 1;
+
 
 //====================================================================================
 
@@ -36,6 +38,7 @@ public class Teste {
                 int menu1;
                 f1 = new Ficha();
                 c1= new Cliente();
+                int cod=1;
                 System.out.println("1 - Novo Cliente");
                 System.out.println("2 - Cliente Cadastrado");
                 menu1 = Integer.parseInt(teclado.entDados("Escolha uma opcao:"));
@@ -48,6 +51,7 @@ public class Teste {
 
                     case 2:
                         System.out.println("cadastrar ficha");
+
                         //cadastrarFicha(f1);
                         break;
                 }
@@ -76,6 +80,8 @@ public class Teste {
         System.out.println("cadastrar ficha");
 
 
+
+
     }
 
     public static Cliente cadastrarCliente (Cliente c1) {
@@ -100,6 +106,7 @@ public class Teste {
         c1.getAnimal().setSexo(teclado.entDados("Informe o Sexo......: "));
         bdc1.add(c1);
         return(c1);
+
     }
 
 

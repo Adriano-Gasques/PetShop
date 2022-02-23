@@ -6,10 +6,30 @@ public class Ficha {
     private String Prazo;
     private String obs;
     private int cod;
-   // private Date data;
+
+    private Cliente cliente = new Cliente();
+
+    private Animal animal = new Animal();
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Animal getAnimal() {
+        return animal;
+    }
+
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
+    }
+
+    // private Date data;
    // private String data1 = new SimpleDateFormat("dd/MM/yyyy").format(data);
   //  private String hora = new SimpleDateFormat("HH:mm").format(data);
-
 
     /*   public String getData1() {
            return data1;
