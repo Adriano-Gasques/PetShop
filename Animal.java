@@ -3,16 +3,10 @@ public class Animal {
     private String nome;
     private String raca;
     private String tipo;
-    private boolean sexo;
-    private Endereco endereco = new Endereco();
+    private String sexo;
 
-    public Endereco getEndereco() {
-        return endereco;
-    }
 
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
+//============Getters and Setters==================================
 
     public int getIdade() {
         return idade;
@@ -34,7 +28,7 @@ public class Animal {
         this.tipo = tipo;
     }
 
-    public void setSexo(boolean sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
@@ -50,7 +44,7 @@ public class Animal {
         return tipo;
     }
 
-    public boolean isSexo() {
+    public String getSexo() {
         return sexo;
     }
 }
