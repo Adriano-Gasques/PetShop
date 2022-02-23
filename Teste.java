@@ -9,6 +9,8 @@ public class Teste {
 
     private static Cliente c1;
 
+    private static Animal a1;
+
     private static List<Ficha> bdf1 = new ArrayList<Ficha>();
 
     private static List<Cliente> bdc1 = new ArrayList<Cliente>();
@@ -19,6 +21,7 @@ public class Teste {
 //====================================================================================
 
     public static void main(String[] args) {
+
 
         int menuPrincipal;
 
@@ -32,30 +35,46 @@ public class Teste {
         switch (menuPrincipal) {
 
 
-//=========Cadastrar Ficha==========================================================================================
+//=========Cadastrar Fichas==========================================================================================
 
             case 1:
                 int menu1;
                 f1 = new Ficha();
-                c1= new Cliente();
-                int cod=1;
+                c1 = new Cliente();
+                int cod = 1;
                 System.out.println("1 - Novo Cliente");
                 System.out.println("2 - Cliente Cadastrado");
                 menu1 = Integer.parseInt(teclado.entDados("Escolha uma opcao:"));
                 switch (menu1) {
 
                     case 1:
-                        System.out.println("cadastrar Cliente");
+                        System.out.println("Cadastrando um novo cliente");
                         cadastrarCliente(c1);
                         break;
 
                     case 2:
-                        System.out.println("cadastrar ficha");
+                        int menu2_1;
+                        buscarCliente();
+                        System.out.println("1 - Animal(is) cadastrado(s)");
+                        System.out.println("2 - Novo animal");
+                        menu2_1 = Integer.parseInt(teclado.entDados("Escolha uma opcao:"));
+                        switch (menu2_1) {
+                            case 1:
+                                System.out.println("Animal(is) do cliente " + c1.getNome());
+                                imprimirFichaAnimal();
+                                break;
 
-                        //cadastrarFicha(f1);
-                        break;
+                            case 2:
+                                System.out.println("Cadastrando um novo animal");
+                                cadastraAnimal(a1);
+                                break;
+                        }
                 }
-//=========Consultar Ficha==========================================================================================
+                break;
+
+
+//=========Consultar Fichas==========================================================================================
+
             case 2:
                 int menu2;
                 System.out.println("Consultar Ficha por:");
@@ -65,12 +84,34 @@ public class Teste {
                 switch (menu2) {
                     case 1:
                         f1.setCod(Integer.parseInt(teclado.entDados("Informe o Codigo:\t")));
+                        break;
 
                     case 2:
                         String consutarNome = teclado.entDados("Digite o Nome do Cliente:");
-
-
+                        break;
                 }
+                break;
+
+
+//=========Imprimir todas as Fichas==========================================================================================
+
+            case 3:
+                System.out.println("Imprimeindo todas as fichas");
+                imprimirTodasFichas();
+                break;
+
+
+//=========Sair==========================================================================================
+
+            case 4:
+                System.out.println("Saindo do menu");
+                break;
+
+
+//=========Opcao default==========================================================================================
+
+            default:
+                System.out.println("Opcao invalida!");
         }
     }
 
@@ -102,7 +143,7 @@ public class Teste {
         f1.getAnimal().setSexo(teclado.entDados("Informe o Sexo......: "));
     }
 
-    public static Cliente cadastrarCliente (Cliente c1) {
+    public static Cliente cadastrarCliente(Cliente c1) {
         System.out.println("cadastrar Cliente");
 //============Dados Cliente===================================================================================
         System.out.println("insira dos dados do Cliente");
@@ -118,7 +159,7 @@ public class Teste {
         c1.getEndereco().setEstado(teclado.entDados("Informe o Estado......: "));
 
         bdc1.add(c1);
-        return(c1);
+        return (c1);
 
     }
 
