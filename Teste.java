@@ -98,11 +98,13 @@ public class Teste {
                         case 2:
                             f1.getCliente().setNome(teclado.entDados("Digite o Nome do Cliente:"));
                             f1 = consultarNome(f1);
-                            if (f1 != null) {
+                          /*  if (f1 != null) {
                                 imprimirFicha(f1);
                             } else {
                                 teclado.entDados("\nNao existe pessoa com este codigo! Press <Enter>...");
                             }
+                            
+                            */
                             break;
                     }
                     break;
@@ -222,7 +224,11 @@ public class Teste {
     public static Ficha consultarNome (Ficha f1) {
         for (int i = 0; i < bdf1.size(); i++) {
             if (f1.getCliente().getNome().contains(bdf1.get(i).getCliente().getNome())) {
-                return bdf1.get(i);
+                if (bdf1.get(i) != null) {
+                    imprimirFicha(bdf1.get(i));
+                } else {
+                    teclado.entDados("\nNao existe pessoa com este codigo! Press <Enter>...");
+                }
             }
         }
         return null;
