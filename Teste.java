@@ -147,6 +147,7 @@ public class Teste {
 //============Endereço========================================================================================
         f1.getCliente().getEndereco().setRua(c1.getEndereco().getRua());
         f1.getCliente().getEndereco().setNumero(c1.getEndereco().getNumero());
+        f1.getCliente().getEndereco().setComplemento(c1.getEndereco().getComplemento());
         f1.getCliente().getEndereco().setCidade(c1.getEndereco().getCidade());
         f1.getCliente().getEndereco().setEstado(c1.getEndereco().getEstado());
 //============Animal========================================================================================
@@ -176,6 +177,7 @@ public class Teste {
 //============Endereço========================================================================================
         c1.getEndereco().setRua(teclado.entDados("Informe a Rua......: "));
         c1.getEndereco().setNumero(Integer.parseInt(teclado.entDados("Informe o Numero......: ")));
+        c1.getEndereco().setComplemento(teclado.entDados("Informe o Complemento......:"));
         c1.getEndereco().setCidade(teclado.entDados("Informe a Cidade......: "));
         c1.getEndereco().setEstado(teclado.entDados("Informe o Estado......: "));
 
@@ -196,7 +198,7 @@ public class Teste {
         System.out.println("Idade: " + f1.getCliente().getIdade());
         System.out.println("CPF: " + f1.getCliente().getCpf());
 //====================Endereço===============================================================================================================
-        System.out.println("Residente da rua :  " + f1.getCliente().getEndereco().getRua() + "  Nº  " + f1.getCliente().getEndereco().getNumero() + ", " + f1.getCliente().getEndereco().getCidade() + " -- " + f1.getCliente().getEndereco().getEstado());
+        System.out.println("Residente da rua :  " + f1.getCliente().getEndereco().getRua() + "  Nº  " + f1.getCliente().getEndereco().getNumero() + ", " + f1.getCliente().getEndereco().getComplemento() + ", " + f1.getCliente().getEndereco().getCidade() + " -- " + f1.getCliente().getEndereco().getEstado());
 //====================Aniamal=================================================================================================================
         System.out.println("==========Dados do Animal===============");
         System.out.println("Nome: " + f1.getAnimal().getNome());
