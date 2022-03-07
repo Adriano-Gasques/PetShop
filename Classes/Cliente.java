@@ -1,3 +1,5 @@
+package Classes;
+
 public class Cliente {
     private int idade;
     private String nome;

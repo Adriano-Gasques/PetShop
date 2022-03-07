@@ -1,3 +1,8 @@
+import Classes.Animal;
+import Classes.Cliente;
+import Classes.Ficha;
+import Classes.Teclado;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +19,8 @@ public class Teste {
     private static final List<Ficha> bdf1 = new ArrayList<>();
 
     private static final List<Cliente> bdc1 = new ArrayList<>();
+
+    private static final List<Animal> bda1 = new ArrayList<>();
 
     static int cod = 0;
 
@@ -38,51 +45,46 @@ public class Teste {
 
 //=========Cadastrar Fichas==========================================================================================
 
-                case 1:
+                case 1 -> {
                     int menu1;
                     f1 = new Ficha();
                     c1 = new Cliente();
-                    System.out.println("1 - Novo Cliente");
-                    System.out.println("2 - Cliente Cadastrado");
+                    System.out.println("1 - Novo Classes.Cliente");
+                    System.out.println("2 - Classes.Cliente Cadastrado");
                     menu1 = Integer.parseInt(teclado.entDados("Escolha uma opcao:"));
                     switch (menu1) {
-
-                        case 1:
+                        case 1 -> {
                             System.out.println("Cadastrando um novo cliente");
                             cadastrarCliente(c1);
                             cadastrarFicha(f1);
-                            break;
-
-                        case 2:
+                        }
+                        case 2 -> {
                             int menu2_1;
                             //buscarCliente();
-                            System.out.println("1 - Animal(is) cadastrado(s)");
+                            System.out.println("1 - Classes.Animal(is) cadastrado(s)");
                             System.out.println("2 - Novo animal");
                             menu2_1 = Integer.parseInt(teclado.entDados("Escolha uma opcao:"));
                             switch (menu2_1) {
-                                case 1:
-                                    System.out.println("Animal(is) do cliente " + c1.getNome());
-                                    //imprimirFichaAnimal();
-                                    break;
+                                case 1 -> System.out.println("Classes.Animal(is) do cliente " + c1.getNome());
 
-                                case 2:
-                                    System.out.println("Cadastrando um novo animal");
-                                    //cadastraAnimal(a1);
-                                    break;
+                                //imprimirFichaAnimal();
+                                case 2 -> System.out.println("Cadastrando um novo animal");
+
+                                //cadastraAnimal(a1);
                             }
-                            break;
+                        }
                     }
-                    break;
+                }
 
 
 //=========Consultar Fichas==========================================================================================
 
-                case 2:
+                case 2 -> {
                     f1 = new Ficha();
                     int menu2;
-                    System.out.println("Consultar Ficha por:");
-                    System.out.println("Codigo da Ficha");
-                    System.out.println("Cliente");
+                    System.out.println("Consultar Classes.Ficha por:");
+                    System.out.println("Codigo da Classes.Ficha");
+                    System.out.println("Classes.Cliente");
                     menu2 = Integer.parseInt(teclado.entDados("Escolha uma opcao:"));
                     switch (menu2) {
                         case 1:
@@ -96,39 +98,29 @@ public class Teste {
                             break;
 
                         case 2:
-                            f1.getCliente().setNome(teclado.entDados("Digite o Nome do Cliente:"));
-                            f1 = consultarNome(f1);
-                          /*  if (f1 != null) {
-                                imprimirFicha(f1);
-                            } else {
-                                teclado.entDados("\nNao existe pessoa com este codigo! Press <Enter>...");
-                            }
-                            
-                            */
+                            f1.getCliente().setNome(teclado.entDados("Digite o Nome do Classes.Cliente:"));
+                            f1 = consultarNomeCliente(f1);
                             break;
                     }
-                    break;
+                }
 
 
 //=========Imprimir todas as Fichas==========================================================================================
 
-                case 3:
+                case 3 -> {
                     System.out.println("Imprimeindo todas as fichas");
                     imprimirTudo();
-                    break;
+                }
 
 
 //=========Sair==========================================================================================
 
-                case 4:
-                    System.out.println("Saindo do menu");
-                    break;
+                case 4 -> System.out.println("Saindo do menu");
 
 
 //=========Opcao default==========================================================================================
 
-                default:
-                    System.out.println("Opcao invalida!");
+                default -> System.out.println("Opcao invalida!");
             }
         }
     }
@@ -138,7 +130,7 @@ public class Teste {
 
         System.out.println("cadastrar ficha");
         f1.setCod(cod);
-//============Dados Cliente===================================================================================
+//============Dados Classes.Cliente===================================================================================
         f1.getCliente().setNome(c1.getNome());
         f1.getCliente().setSobrenome(c1.getSobrenome());
         f1.getCliente().setCpf(c1.getCpf());
@@ -150,7 +142,7 @@ public class Teste {
         f1.getCliente().getEndereco().setComplemento(c1.getEndereco().getComplemento());
         f1.getCliente().getEndereco().setCidade(c1.getEndereco().getCidade());
         f1.getCliente().getEndereco().setEstado(c1.getEndereco().getEstado());
-//============Animal========================================================================================
+//============Classes.Animal========================================================================================
         f1.getAnimal().setNome(teclado.entDados("Informe o Nome......: "));
         f1.getAnimal().setTipo(teclado.entDados("Informe o Tipo......: "));
         f1.getAnimal().setRaca(teclado.entDados("Informe o Raca......: "));
@@ -166,9 +158,9 @@ public class Teste {
     }
 
     public static Cliente cadastrarCliente(Cliente c1) {
-        System.out.println("cadastrar Cliente");
-//============Dados Cliente===================================================================================
-        System.out.println("insira dos dados do Cliente");
+        System.out.println("cadastrar Classes.Cliente");
+//============Dados Classes.Cliente===================================================================================
+        System.out.println("insira dos dados do Classes.Cliente");
         c1.setNome(teclado.entDados("Informe o Nome......: "));
         c1.setSobrenome(teclado.entDados("Informe o Sobrenome......: "));
         c1.setCpf(Integer.parseInt(teclado.entDados("Informe o CPF......: ")));
@@ -187,12 +179,12 @@ public class Teste {
     }
 
     public static void imprimirFicha(Ficha f1) {
-//====================Ficha===========================================================================================================
-        System.out.println("==========Dados da Ficha================");
+//====================Classes.Ficha===========================================================================================================
+        System.out.println("==========Dados da Classes.Ficha================");
         System.out.println("Cod: " + f1.getCod());
         System.out.println("Seviço: " + f1.getObs());
         System.out.println("Prazo: " + f1.getPrazo());
-//====================Cliente===================================================================================================================
+//====================Classes.Cliente===================================================================================================================
         System.out.println("==========Dados do CLiente==============");
         System.out.println("Nome do CLiente: " + f1.getCliente().getNome()+ " " +f1.getCliente().getSobrenome());
         System.out.println("Idade: " + f1.getCliente().getIdade());
@@ -200,7 +192,7 @@ public class Teste {
 //====================Endereço===============================================================================================================
         System.out.println("Residente da rua :  " + f1.getCliente().getEndereco().getRua() + "  Nº  " + f1.getCliente().getEndereco().getNumero() + ", " + f1.getCliente().getEndereco().getComplemento() + ", " + f1.getCliente().getEndereco().getCidade() + " -- " + f1.getCliente().getEndereco().getEstado());
 //====================Aniamal=================================================================================================================
-        System.out.println("==========Dados do Animal===============");
+        System.out.println("==========Dados do Classes.Animal===============");
         System.out.println("Nome: " + f1.getAnimal().getNome());
         System.out.println("Tipo: " + f1.getAnimal().getTipo());
         System.out.println("Raca: " + f1.getAnimal().getRaca());
@@ -223,7 +215,7 @@ public class Teste {
         return null;
     }
 
-    public static Ficha consultarNome (Ficha f1) {
+    public static Ficha consultarNomeCliente(Ficha f1) {
         for (int i = 0; i < bdf1.size(); i++) {
             if (f1.getCliente().getNome().contains(bdf1.get(i).getCliente().getNome())) {
                 if (bdf1.get(i) != null) {
@@ -236,4 +228,29 @@ public class Teste {
         return null;
     }
 
+    public static Ficha consultarNomeClienteCadastro(Ficha f1) {
+        for (int i = 0; i < bdc1.size(); i++) {
+            if (f1.getCliente().getNome().contains(bdc1.get(i).getNome())) {
+                if (bdc1.get(i) != null) {
+                    System.out.println(i+") " + bdc1.get(i).getNome() +" "+ bdc1.get(i).getSobrenome()+ " CPF: " + bdc1.get(i).getCpf());
+                } else {
+                    teclado.entDados("\nNao existe pessoa com este codigo! Press <Enter>...");
+                }
+            }
+        }
+        return null;
+    }
+
+    public static Ficha consultarNomeAnimal(Ficha f1) {
+        for (Ficha ficha : bdf1) {
+            if (f1.getCliente().getNome().contains(ficha.getCliente().getNome())) {
+                if (ficha != null) {
+                    imprimirFicha(ficha);
+                } else {
+                    teclado.entDados("\nNao existe pessoa com este codigo! Press <Enter>...");
+                }
+            }
+        }
+        return null;
+    }
 }

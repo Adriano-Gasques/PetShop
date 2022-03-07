@@ -1,5 +1,7 @@
-import java.text.SimpleDateFormat;
-import java.util.Date;
+package Classes;
+
+import Classes.Animal;
+import Classes.Cliente;
 
 public class Ficha {
 
