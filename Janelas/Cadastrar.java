@@ -1,5 +1,8 @@
 package Janelas;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class Cadastrar extends javax.swing.JFrame {
 
 
@@ -10,8 +13,8 @@ public class Cadastrar extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        novoCliente = new javax.swing.JButton();
+        entrar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -19,9 +22,9 @@ public class Cadastrar extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Novo Cliente");
+        novoCliente.setText("Novo Cliente");
 
-        jButton3.setText("Entrar");
+        entrar.setText("Entrar");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
@@ -47,6 +50,19 @@ public class Cadastrar extends javax.swing.JFrame {
         jLabel1.setText("Pesquisar");
 
 
+
+        novoCliente.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                NovoCliente novoCliente =new NovoCliente();
+                novoCliente.main();
+            }
+        });
+
+
+
+
+
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -59,9 +75,9 @@ public class Cadastrar extends javax.swing.JFrame {
                                                 .addGap(18, 18, 18)
                                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addComponent(jButton1)
+                                                .addComponent(novoCliente)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jButton3))
+                                                .addComponent(entrar))
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(19, 19, 19))
         );
@@ -76,8 +92,8 @@ public class Cadastrar extends javax.swing.JFrame {
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jButton3)
-                                        .addComponent(jButton1))
+                                        .addComponent(entrar)
+                                        .addComponent(novoCliente))
                                 .addContainerGap())
         );
 
@@ -111,8 +127,8 @@ public class Cadastrar extends javax.swing.JFrame {
         });
     }
 
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton novoCliente;
+    private javax.swing.JButton entrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

@@ -27,8 +27,6 @@ public class Principal extends javax.swing.JFrame {
         editFicha.setText("Editar Ficha");
 
         sair.setText("Sair");
-
-
 //==============cadastrar ficha==============================================================
         cadFicha.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {

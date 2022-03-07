@@ -78,8 +78,5 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField senha1;
     private javax.swing.JTextField login1;
 
-    private void setEntrar (java.awt.event.ActionEvent evt) {
-
-    }
 
 }
