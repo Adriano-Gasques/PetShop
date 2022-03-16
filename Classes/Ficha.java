@@ -3,6 +3,12 @@ package Classes;
 import Classes.Animal;
 import Classes.Cliente;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
+
 public class Ficha {
 
     private String Prazo;
@@ -29,34 +35,40 @@ public class Ficha {
         this.animal = animal;
     }
 
-    // private Date data;
-   // private String data1 = new SimpleDateFormat("dd/MM/yyyy").format(data);
-  //  private String hora = new SimpleDateFormat("HH:mm").format(data);
+    //Tentando fazer algo em relação as data/horas
+    private LocalDate data;
+    private LocalTime hora;
+    private LocalDateTime dataHora;
 
-    /*   public String getData1() {
-           return data1;
-
-
-     /*  public void setData1(String data1) {
-           this.data1 = data1;
-       }
-
-       public String getHora() {
-           return hora;
-       }
-
-       public void setHora(String hora) {
-           this.hora = hora;
-       }
-           public Date getData() {
-        return data;
-    }
-
-    public void setData(Date data) {
-        this.data = data;
-    }
-
+    /**
+     * Fiz esse teste para saber se ia da certo.
+     *         Ficha ficha = new Ficha();
+     *
+     *         System.out.println(ficha.getData());
+     *         System.out.println(ficha.getHora());
+     *         System.out.println(ficha.getDataHora());
      */
+
+    DateTimeFormatter formatadorData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    //Um pequeno detalhe aqui, o HH o formato das horas fica em 24hrs, já em hh o formato fica em 12hrs.
+    DateTimeFormatter formatadorHora = DateTimeFormatter.ofPattern("HH:mm:ss");
+    DateTimeFormatter formatadorDataHora = DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm");
+
+    public String getData() {
+        data = LocalDate.now();
+        return data.format(formatadorData);
+    }
+
+    public String getHora() {
+        hora = LocalTime.now();
+        return hora.format(formatadorHora);
+    }
+
+    public String getDataHora() {
+        dataHora = LocalDateTime.now();
+        return dataHora.format(formatadorDataHora);
+    }
+
     public String getPrazo() {
         return Prazo;
     }
